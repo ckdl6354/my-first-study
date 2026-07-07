@@ -1,0 +1,19 @@
+<style>
+    /* [기본] 스타일 */
+    body { background-color: #f4f4f9; color: #222; transition: 0.3s; }
+    
+    /* [다크모드] 전용 스타일 */
+    body.dark-mode { background-color: #121212; color: #e0e0e0; }
+</style>
+
+<body>
+    <!-- 토글 버튼 -->
+    <button class="mode-toggle-btn" onclick="toggleMode()">🌓 테마 변경</button>
+
+    <script>
+        // 클래스 토글 함수
+        function toggleMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+</body>
