@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LockEye - 테마 스위치</title>
+    
+    <!-- 1. 깜빡임 방지용 인라인 스크립트 (CSS 로드 전에 실행되어야 함) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 저장된 값이 다크거나, 저장된 값은 없는데 시스템이 다크 모드인 경우
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+
+    <!-- 2. CSS 스타일 설정 -->
+    <style>
+        /* 기본 기본값 (라이트 모드 환경) */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --btn-bg: #e0e0e0;
+            --btn-text: #000000;
+        }
+
+        /* 다크 모드 전용 변수 값 변경 */
+        html.dark-mode {
+            --bg-color: #121212;
+            --text-color: #f5f5f5;
+            --btn-bg: #333333;
+            --btn-text: #ffffff;
+        }
+
+        /* 부드러운 화면 전환 효과 */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-serif;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* 토글 버튼 스타일 */
+        .theme-btn {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>LockEye 프로젝트 테스트</h1>
+    <p>브라우저를 새로고침하거나 창을 껐다 켜도 테마가 유지됩니다.</p>
+    
+    <!-- 테마 토글 버튼 (아이콘 포함) -->
+    <button id="theme-toggle" class="theme-btn">모드 전환</button>
+
+    <!-- 3. 자바스크립트 로직 -->
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+
+        // 페이지가 켜졌을 때 버튼 내부의 텍스트(아이콘) 초기화 함수
+        function updateButtonText() {
+            if (document.documentElement.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️ 라이트 모드로 보기';
+            } else {
+                toggleBtn.textContent = '🌙 다크 모드로 보기';
+            }
+        }
+
+        // 켜지자마자 버튼 텍스트 한 번 맞춰주기
+        updateButtonText();
+
+        // 버튼 클릭 시 발생하는 이벤트
+        toggleBtn.addEventListener('click', () => {
+            // HTML 태그에 dark-mode 클래스를 꼈다 뺐다(토글) 합니다.
+            document.documentElement.classList.toggle('dark-mode');
+
+            // 바뀐 상태에 따라 localStorage에 상태를 영구 저장합니다.
+            if (document.documentElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+
+            // 버튼의 글자도 모드에 맞게 실시간 변경합니다.
+            updateButtonText();
+        });
+    </script>
+</body>
+</html>
