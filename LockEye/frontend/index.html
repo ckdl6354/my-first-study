@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <!-- 1. 깜빡임 방지용 테마 확인 스크립트 (최상단 배치) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LockEye - 몰입 타이머</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #f4f4f9; padding-top: 50px; }
-        .timer-container { background: white; width: 340px; margin: 0 auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .time-display { font-size: 54px; font-weight: bold; color: #222; margin: 20px 0; }
-        button { padding: 12px 24px; font-size: 16px; background-color: #e63946; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        button:hover { background-color: #c1121f; }
+        /* 2. 다크모드 색상 변수 설정 */
+        :root {
+            --bg-color: #f4f4f9;
+            --container-bg: white;
+            --text-color: #222;
+        }
+
+        html.dark-mode {
+            --bg-color: #121212;
+            --container-bg: #1e1e1e;
+            --text-color: #f5f5f5;
+        }
+
+        body { 
+            font-family: sans-serif; 
+            text-align: center; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding-top: 50px; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .timer-container { 
+            background: var(--container-bg);
+            width: 340px; 
+            margin: 0 auto; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+
+        .time-display { 
+            font-size: 54px; 
+            font-weight: bold; 
+            color: var(--text-color);
+            margin: 20px 0; 
+        }
+
+        /* 메인 버튼 스타일 */
+        .timer-container button { padding: 12px 24px; font-size: 16px; background-color: #e63946; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .timer-container button:hover { background-color: #c1121f; }
     </style>
 </head>
 <body>
+
+    <!-- 3. 테마 전환 버튼 위치 상단으로 이동 -->
+    <button id="theme-toggle" style="padding: 5px 10px; font-size: 12px; margin-bottom: 20px; background: #333; color: #fff; border: none; border-radius: 3px; cursor: pointer;">
+        🌙 모드 전환
+    </button>
 
     <div class="timer-container">
         <h2>👁️ LockEye</h2>
@@ -84,6 +135,29 @@
                     document.getElementById('startBtn').innerText = "몰입 시작";
                 }
             }
+        });
+
+        // 4. 다크모드 토글 버튼 작동 로직 (독립된 위치로 이동)
+        const toggleBtn = document.getElementById('theme-toggle');
+
+        function updateButtonText() {
+            if (document.documentElement.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️ 라이트 모드로 보기';
+            } else {
+                toggleBtn.textContent = '🌙 다크 모드로 보기';
+            }
+        }
+
+        updateButtonText(); // 첫 로딩 시 버튼 글자 맞추기
+
+        toggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            if (document.documentElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            updateButtonText(); // 클릭 시 버튼 글자 변경
         });
     </script>
 </body>
