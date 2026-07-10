@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>LockEye - 타이머</title>
+  <style>
+    /* 화면 정중앙 정렬 */
+    body {
+      background-color: #121212; /* 눈이 편한 다크 모드 배경 */
+      color: #ffffff;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* 초보자용 깔끔한 타이머 상자 디자인 */
+    .timer-box {
+      font-size: 80px;               /* 글자 크기 크게 */
+      font-weight: bold;             /* 글자 두껍게 */
+      font-family: monospace;        /* 숫자가 바뀌어도 가로폭 고정 */
+      padding: 30px 60px;            /* 안쪽 여백 */
+      border-radius: 20px;           /* 모서리 둥글게 */
+      background-color: #222222;     /* 진한 회색 상자 */
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* 은은한 그림자 효과 */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 타이머 화면 표시 -->
+  <div id="timer" class="timer-box">25:00</div>
+
+  <script>
+    let time = 25 * 60; // 25분을 초 단위로 계산 (1500초)
+
+    // 1초마다 안의 함수를 실행하는 마법의 코드
+    setInterval(() => {
+      if (time > 0) time--; // 시간이 남아있으면 1초씩 감소
+      
+      let min = String(Math.floor(time / 60)).padStart(2, '0'); // 분 계산 (00 형태로 맞춰줌)
+      let sec = String(time % 60).padStart(2, '0');            // 초 계산 (00 형태로 맞춰줌)
+      
+      document.getElementById('timer').textContent = `${min}:${sec}`; // 화면에 글자 넣기
+    }, 1000);
+  </script>
+
+</body>
+</html>
