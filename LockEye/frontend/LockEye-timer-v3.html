@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 1. 깜빡임 방지용 테마 확인 스크립트 -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                document.documentElement.classList.add('dark-mode');
+            }
+        })();
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LockEye - 몰입 타이머</title>
+    <style>
+        /* 2. 다크모드/라이트모드 스타일 변수 설정 */
+        :root {
+            --bg-color: #f4f4f9;
+            --container-bg: #ffffff;
+            --text-color: #222222;
+            --sub-text-color: #666666;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --btn-start: #e63946;
+            --btn-start-hover: #c1121f;
+            --btn-reset: #6c757d;
+            --btn-reset-hover: #5a6268;
+        }
+
+        html.dark-mode {
+            --bg-color: #0d0e12;
+            --container-bg: #16171d;
+            --text-color: #f5f5f5;
+            --sub-text-color: #999999;
+            --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            --btn-start: #ff0055;
+            --btn-start-hover: #d00044;
+            --btn-reset: #3a3d4a;
+            --btn-reset-hover: #2b2d37;
+        }
+
+        body { 
+            font-family: sans-serif; 
+            text-align: center; 
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* 세련되게 바뀐 네모난 창 디자인 */
+        .timer-container { 
+            background: var(--container-bg);
+            width: 360px; 
+            padding: 45px 35px; 
+            border-radius: 24px; 
+            box-shadow: var(--box-shadow); 
+            border: 1px solid rgba(128, 128, 128, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .timer-container h2 {
+            margin-top: 0;
+            font-size: 28px;
+        }
+
+        .timer-container p {
+            font-size: 14px;
+            color: var(--sub-text-color);
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        /* 타이머 숫자 서체 고정 */
+        .time-display { 
+            font-size: 58px; 
+            font-weight: bold; 
+            font-family: monospace;
+            color: var(--text-color);
+            margin: 25px 0; 
+        }
+
+        /* 버튼 정렬을 위한 그룹 */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        /* 공통 버튼 스타일 */
+        .timer-container button { 
+            flex: 1;
+            padding: 14px; 
+            font-size: 16px; 
+            color: white; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .timer-container button:active {
+            transform: scale(0.98);
+        }
+
+        /* 시작 버튼 */
+        #startBtn { background-color: var(--btn-start); }
+        #startBtn:hover { background-color: var(--btn-start-hover); }
+
+        /* 리셋 버튼 */
+        #resetBtn { background-color: var(--btn-reset); }
+        #resetBtn:hover { background-color: var(--btn-reset-hover); }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 테마 전환 버튼 -->
+    <button id="theme-toggle" style="padding: 6px 12px; font-size: 13px; margin-bottom: 25px; background: #333; color: #fff; border: none; border-radius: 20px; cursor: pointer;">
+        🌙 모드 전환
+    </button>
+
+    <!-- 업그레이드된 네모 상자 레이아웃 -->
+    <div class="timer-container">
+        <h2>👁️ LockEye</h2>
+        <p>다른 탭으로 이동하면 즉시 자바/스프링 퀴즈 패널티가 발생합니다.</p>
+        <div class="time-display" id="timer">30:00</div>
+        
+        <!-- 버튼을 나란히 배치 -->
+        <div class="btn-group">
+            <button id="startBtn" onclick="toggleTimer()">몰입 시작</button>
+            <button id="resetBtn" onclick="resetTimer()">리셋</button>
+        </div>
+    </div>
+
+    <script>
+        let timeLeft = 30 * 60; // 30분 세팅
+        let timerId = null;
+        let isRunning = false;
+
+        // 자바 및 스프링 풀스택 핵심 개념 OX 퀴즈 리스트
+        const quizList = [
+            { question: "자바의 String은 한번 생성되면 내부 값을 변경할 수 없는 불변(Immutable) 객체이다. (O/X)", answer: "O" },
+            { question: "JVM의 스택(Stack) 영역은 new 연산자로 생성된 실제 객체(인스턴스)가 저장되는 공간이다. (O/X)", answer: "X" },
+            { question: "기본 자료형(Primitive Type)인 int, double 등은 JVM의 스택 영역에 실제 값이 저장된다. (O/X)", answer: "O" },
+            { question: "클래스 변수(static 변수)는 메서드가 실행될 때마다 스택 영역에 새로 생성된다. (O/X)", answer: "X" },
+            { question: "오버로딩(Overloading)은 부모 클래스의 메서드를 자식 클래스에서 재정의하는 것을 말한다. (O/X)", answer: "X" },
+            { question: "인터페이스(Interface)는 다중 상속(구현)을 지원한다. (O/X)", answer: "O" },
+            { question: "스프링의 IoC(제어의 역전)는 개발자가 아닌 스프링 컨테이너가 객체의 생명주기를 직접 관리하는 것을 의미한다. (O/X)", answer: "O" },
+            { question: "스프링 빈(Bean)은 기본적으로 매번 요청될 때마다 새로운 객체를 생성하는 프로토타입 방식으로 동작한다. (O/X)", answer: "X" },
+            { question: "스프링에서 @RestController 어노테이션은 화면(HTML) 대신 JSON이나 XML 같은 순수 데이터를 반환할 때 사용한다. (O/X)", answer: "O" },
+            { question: "스프링의 DI(의존성 주입)를 사용하면 클래스 간의 결합도가 높아져 유지보수가 어려워진다. (O/X)", answer: "X" }
+        ];
+
+        // 시작 및 일시정지 제어 함수
+        function toggleTimer() {
+            const startBtn = document.getElementById('startBtn');
+            if (!isRunning) {
+                isRunning = true;
+                startBtn.innerText = "일시정지";
+                
+                timerId = setInterval(() => {
+                    if (timeLeft <= 0) {
+                        clearInterval(timerId);
+                        alert("축하합니다! 30분 몰입 세션을 완수하셨습니다.");
+                        isRunning = false;
+                        startBtn.innerText = "몰입 시작";
+                        return;
+                    }
+                    timeLeft--;
+                    updateDisplay();
+                }, 1000);
+                
+            } else {
+                clearInterval(timerId);
+                timerId = null;
+                isRunning = false;
+                startBtn.innerText = "몰입 시작";
+            }
+        }
+
+        // 리셋 함수
+        function resetTimer() {
+            if (timerId !== null) {
+                clearInterval(timerId);
+                timerId = null;
+            }
+            isRunning = false;
+            timeLeft = 30 * 60; 
+            updateDisplay();
+            document.getElementById('startBtn').innerText = "몰입 시작";
+        }
+
+        function updateDisplay() {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            document.getElementById('timer').innerText = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // 시선 이탈 감지 핵심 엔진 및 지능형 패널티 시스템
+        document.addEventListener("visibilitychange", () => {
+            if (!document.hidden && isRunning) {
+                clearInterval(timerId); 
+                
+                const randomQuiz = quizList[Math.floor(Math.random() * quizList.length)];
+                const userAnswer = prompt(`[⚠ LockEye 탈주 감지]\n\n화면 이탈이 발생했습니다! 아래 문제를 맞추면 타이머가 복구됩니다.\n\n${randomQuiz.question}`);
+
+                if (userAnswer && userAnswer.toUpperCase() === randomQuiz.answer) {
+                    alert("정답입니다! 몰입을 이어서 진행합니다.");
+                    isRunning = false;
+                    toggleTimer(); 
+                } else {
+                    alert("오답이거나 미입력하여 패널티가 부여됩니다. 타이머가 30분으로 초기화됩니다.");
+                    timeLeft = 30 * 60; 
+                    updateDisplay();
+                    isRunning = false;
+                    document.getElementById('startBtn').innerText = "몰입 시작";
+                }
+            }
+        });
+
+        // 다크모드 토글 버튼 작동 로직
+        const toggleBtn = document.getElementById('theme-toggle');
+
+        function updateButtonText() {
+            if (document.documentElement.classList.contains('dark-mode')) {
+                toggleBtn.textContent = '☀️ 라이트 모드로 보기';
+            } else {
+                toggleBtn.textContent = '🌙 다크 모드로 보기';
+            }
+        }
+
+        updateButtonText(); 
+
+        toggleBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark-mode');
+            if (document.documentElement.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+            updateButtonText(); 
+        });
+    </script>
+</body>
+</html>
