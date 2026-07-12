@@ -46,14 +46,14 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* 은은한 그림자 효과 */
       text-align: center;
     }
-<div class="control-box">
-    <button id="startPauseBtn" class="btn">시작</button>
-</div>
 </style>
 </head>
 <body>
   <!-- 타이머 화면 표시 -->
   <div id="timer" class="timer-box">25:00</div>
+  <div class="control-box">
+      <button id="startPauseBtn" class="btn">시작</button>
+  </div>
   <script>
     let time = 25 * 60; 
 let timerInterval = null; // 타이머 제어용 변수
