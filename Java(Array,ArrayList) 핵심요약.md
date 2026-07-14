@@ -1,5 +1,5 @@
 # [Java] 배열(Array) vs 리스트(ArrayList) 반복문 핵심 요약
-
+(본 문서의 기본 서식과 구조는 AI의 도움을 받아 작성되었습니다)
 ## 1. 한 눈에 보는 차이점 요약
 
 | 구분 | 배열 (Array) | ArrayList |
@@ -49,3 +49,4 @@ for (String name : arr) {
 2. **`.length`와 `.size()` 헷갈림**
    - 배열은 괄호 없는 `.length`
    - ArrayList는 괄호 있는 `.size()`
+     
