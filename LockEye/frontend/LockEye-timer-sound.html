@@ -127,8 +127,6 @@
 
     <!-- 업그레이드된 네모 상자 레이아웃 -->
     <div class="timer-container">
-      <!-- 🔊 타이머 완료 알림음 (맑은 딩동 소리) -->
-<audio id="alarmSound" src="https://mixkit.co" preload="auto"></audio>
         <h2>👁️ LockEye</h2>
         <p>다른 탭으로 이동하면 즉시 자바/스프링 퀴즈 패널티가 발생합니다.</p>
                 <!-- 💡 [추가] 집중 시간 설정 선택창 및 입력창 -->
@@ -284,14 +282,8 @@ document.addEventListener("visibilitychange", () => {
             updateButtonText(); 
         });
 
-        // ==========================================
-        // 🔔 [추가 기능] 탭 시각 알림 및 사운드 엔진
-        // ==========================================
-
-        // 1. 실제 소리가 나는 맑은 딩동음 음원 주소로 세팅
-        const alarmAudio = new Audio("https://mixkit.co");
-
-        // 2. 브라우저 탭 타이틀을 깜빡이게 만드는 변수와 함수
+        
+        // 1. 브라우저 탭 타이틀을 깜빡이게 만드는 변수와 함수
         let blinkInterval = null;
         function startTitleBlink() {
             if (blinkInterval) return;
@@ -313,7 +305,7 @@ document.addEventListener("visibilitychange", () => {
             document.title = isRunning ? `[${timeString}] LockEye` : "LockEye - 몰입 타이머";
         };
 
-        // 4. 기존 toggleTimer 함수를 강제로 채가서 종료 시 알림음과 깜빡임 실행
+        // 4. 기존 toggleTimer 함수를 강제로 채가서 종료 시 깜빡임 실행
         const originalToggleTimer = toggleTimer;
         toggleTimer = function() {
             originalToggleTimer(); 
@@ -321,7 +313,6 @@ document.addEventListener("visibilitychange", () => {
             let checkEnd = setInterval(() => {
                 if (timeLeft <= 0) {
                     clearInterval(checkEnd);
-                    alarmAudio.play().catch(e => console.log("오디오 재생 차단 해제 필요"));
                     startTitleBlink();
                 }
                 if (!isRunning) clearInterval(checkEnd); 
@@ -338,9 +329,5 @@ document.addEventListener("visibilitychange", () => {
             }
             document.title = "LockEye - 몰입 타이머";
         };
-        
-       if (typeof alarmAudio !== 'undefined') {
-        alarmAudio.src = "https://mixkit.co";
-    }
     </script>
 </body>
