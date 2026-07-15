@@ -338,5 +338,9 @@ document.addEventListener("visibilitychange", () => {
             }
             document.title = "LockEye - 몰입 타이머";
         };
+        
+       if (typeof alarmAudio !== 'undefined') {
+        alarmAudio.src = "https://mixkit.co";
+    }
     </script>
 </body>
