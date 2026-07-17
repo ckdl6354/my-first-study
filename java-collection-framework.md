@@ -1,6 +1,6 @@
 # Java Collection Framework Cheat Sheet
 
-코딩테스트와 실무에서 가장 많이 쓰는 자바 핵심 자료구조(List, Set, Map) 요약(AI 활용)
+코딩테스트와 실무에서 가장 많이 쓰는 자바 핵심 자료구조(List, Set, Map) 요약
 
 ---
 
@@ -32,14 +32,13 @@
 *   **TreeMap**: Key 기준 자동 정렬. **(범위 검색)**
 
 ---
-
 ## 필수 활용 패턴 (Code Snippets)
 
 ### HashMap 빈도수 계산
 ```java
-Map<String, Integer> map = new HashMap<>();
+Map<String, Integer> map = new HashMap<>(); 
 
-// 데이터가 없으면 0, 있으면 기존 값 + 1
+// 데이터가 없으면 0, 있으면 기존 값 + 1 
 map.put(key, map.getOrDefault(key, 0) + 1);
 ```
 
@@ -47,6 +46,7 @@ map.put(key, map.getOrDefault(key, 0) + 1);
 ```java
 Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 2, 3)); 
 
-// O(1) 속도로 데이터 존재 여부 확인
-if (set.contains(target)) { ... } 
+// O(1) 속도로 데이터 존재 여부 확인 
+if (set.contains(target)) { ... }
 ```
+
