@@ -46,6 +46,6 @@ map.put(key, map.getOrDefault(key, 0) + 1);
 ```java
 Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 2, 3)); 
 
-// 매우 빠른속도로 데이터 존재 여부 확인 
+// 매우 빠른 속도로 데이터 존재 여부 확인 
 if (set.contains(target)) { ... }
 ```
