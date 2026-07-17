@@ -49,4 +49,3 @@ Set<Integer> set = new HashSet<>(Arrays.asList(1, 2, 2, 3));
 // O(1) 속도로 데이터 존재 여부 확인 
 if (set.contains(target)) { ... }
 ```
-
