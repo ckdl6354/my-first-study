@@ -15,7 +15,7 @@ class ChildNumber extends ParentNumber {
     }
 }
 
-public class NumberTest {
+public class LoopAndInherit {
     public static void main(String[] args) {
         
         // [반복문] : 1부터 5까지 숫자를 넣어서 객체를 만듦
