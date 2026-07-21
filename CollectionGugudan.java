@@ -51,7 +51,7 @@ public class CollectionGugudan {
 
         // 4. 최종 결과 출력
         System.out.println("------------------------------------");
-        System.out.println("내가 맞힌 구구단 종류(중복 없음): " + set);
+        System.out.println("지금까지 맞힌 정답(중복 없음): " + set);
         
         sc.close();
     }
