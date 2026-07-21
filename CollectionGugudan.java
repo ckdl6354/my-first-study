@@ -7,7 +7,7 @@ public class CollectionGugudan {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 1. 문제 - 정답 -저장
+        // 1. 문제 - 정답
         HashMap<String, Integer> map = new HashMap<>();
         map.put("3 x 4", 12);
         map.put("5 x 2", 10);
@@ -19,7 +19,7 @@ public class CollectionGugudan {
         list.add("5 x 2");
         list.add("7 x 3");
 
-        // 3. 정답 저장
+        // 3. 정답을 저장
         HashSet<Integer> set = new HashSet<>();
 
         System.out.println("쉽게 이해하는 자료구조 구구단 퀴즈!");
