@@ -34,7 +34,7 @@ public class MiniProject {
             if (menu == 1) { // 전체 목록 출력
                 System.out.println("\n[현재 재고 목록]");
                 for (Product p : mart.values()) {
-                    System.out.println("상품명: " + p.name + " | 재고: " + p.stock + "개");
+                    System.out.println("상품명: " + p.name + " | 가격: " + p.price + "원 | 재고: " + p.stock + "개");
                 }
             } else if (menu == 2) {
                 System.out.print("재고를 채울 상품 이름: ");
