@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-//에서 제공된 코드 구조를 바탕으로, 한 파일 내 public class는 1개만 존재하도록 수정했습니다.
 class Product {
     String name;
     int price;
@@ -43,6 +42,7 @@ public class MiniProject {
                 if (mart.containsKey(name)) {
                     System.out.print("추가할 수량: ");
                     mart.get(name).stock += sc.nextInt();
+                    sc.nextLine();
                     System.out.println(name + " 재고가 업데이트 되었습니다.");
                 } else {
                     System.out.println("존재하지 않는 상품입니다.");
