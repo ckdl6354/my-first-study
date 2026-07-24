@@ -34,7 +34,8 @@ public class MiniProject {
             if (menu == 1) { // 전체 목록 출력
                 System.out.println("\n[현재 재고 목록]");
                 for (Product p : mart.values()) {
-                    System.out.println("상품명: " + p.name + " | 가격: " + p.price + "원 | 재고: " + p.stock + "개");
+                    String stockState = (p.stock == 0) ?"품절": p.stock+"개";
+                    System.out.println("상품명: " + p.name + " | 가격: " + p.price + "원 | 재고: "+ stockState);
                 }
             } else if (menu == 2) {
                 System.out.print("재고를 채울 상품 이름: ");
@@ -75,9 +76,14 @@ public class MiniProject {
         mart.put(name, new Product(name, price, stock));
         System.out.println("[" + name + "] 상품이 새로 등록되었습니다.");
     }
-            }else if (menu == 4) { 
-                System.out.println("프로그램을 종료합니다.");
-                break;
+            } else if ( menu == 4) {
+                int totalStock = 0;
+                for (Product p : mart.values()) {
+                    totalStock += p.stock; // 모든 상품의 재고를 더함
+    }
+    System.out.println("\n[마감 브리핑] 현재 마트에 남은 총 재고는 " + totalStock + "개입니다.");
+    System.out.println("프로그램을 종료합니다.");
+    break;
             } else { 
                 System.out.println("잘못된 입력입니다.");
         }
