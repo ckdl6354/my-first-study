@@ -41,14 +41,17 @@ public class RockPaperScissors {
 
             if (user == com) {
                 System.out.println("비겼습니다!");
-                // 1. 무승부 카운트(draws)를 1 증가시키세요.
+                draws++;
+                // 1. 무승부 카운트(draws)를 1 증가
                 
             } else if ((user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2)) {
                 System.out.println("이겼습니다!");
+                wins++;
                 // 2. 승리 카운트(wins)를 1 증가
                 
             } else {
                 System.out.println("졌습니다...");
+                losses++;
                 // 3. 패배 카운트(losses)를 1 증가
                 
             }
