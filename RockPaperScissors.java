@@ -20,7 +20,7 @@ public class RockPaperScissors {
             
             int user = sc.nextInt();
 
-            // 4를 누르면 반복문을 탈출하여 게임을 종료합니다.
+            // 4를 누르면 반복문을 탈출하여 게임을 종료
             if (user == 4) {
                 System.out.println("게임이 종료되었습니다. 최종 전적은 " + wins + "승 " + draws + "무 " + losses + "패 입니다.");
                 break;
@@ -59,7 +59,6 @@ public class RockPaperScissors {
         sc.close();
     }
 
-    // 숫자를 "가위", "바위", "보" 글자로 바꿔주는 편리한 함수
     public static String getChoiceName(int choice) {
         if (choice == 1) return "가위";
         if (choice == 2) return "바위";
