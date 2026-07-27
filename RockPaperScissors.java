@@ -48,18 +48,13 @@ public class RockPaperScissors {
               if (wins == targetWins) {
               System.out.println("\n축하합니다! 승리 횟수(" + targetWins + "승)를 달성하여 게임을 종료합니다.");
               break;
-    }
-            } else {
-             System.out.println("졌습니다...");
-             losses++;
-}                
-            } else {
+            }      
+        } else {
                 System.out.println("졌습니다...");
                 losses++;
                 System.out.println("게임이 즉시 종료됩니다.");
                 break;
-                 
-                }
+            }
         }
         sc.close();
     }
