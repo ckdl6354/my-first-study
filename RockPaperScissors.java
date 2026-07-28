@@ -9,10 +9,7 @@ public class RockPaperScissors {
         int wins = 0;
         int draws = 0;
         int losses = 0;
-
-        System.out.print("목표 승리 횟수를 입력하세요: ");
-        int targetWins = sc.nextInt();
-
+        
         System.out.println("=== 가위바위보 ===");
         
         while (true) {
@@ -44,12 +41,7 @@ public class RockPaperScissors {
                 
             } else if ((user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2)) {
                 System.out.println("이겼습니다!");
-                wins++;
-            
-                if (wins == targetWins) {
-                    System.out.println("\n축하합니다! 목표 승리 횟수(" + targetWins + "승)를 달성했습니다!");
-                    break; // 목표 달성 시 루프 탈출
-                }      
+                wins++;                      
             } else {
                 System.out.println("졌습니다...");
                 losses++;
