@@ -22,9 +22,10 @@ public class RockPaperScissors {
             
             int user = sc.nextInt();
 
+            // [수정 1] 사용자가 4번 종료를 눌렀을 때의 처리 블록
             if (user == 4) {
-                System.out.println("게임이 종료되었습니다. 최종 전적은 " + wins + "승 " + draws + "무 " + losses + "패 입니다.");
-                break;
+                System.out.println("사용자 요청으로 게임을 종료합니다.");
+                break; // 루프를 탈출하여 맨 아래의 최종 결과 출력으로 이동합니다.
             }
 
             if (user < 1 || user > 3) {
@@ -45,17 +46,33 @@ public class RockPaperScissors {
                 System.out.println("이겼습니다!");
                 wins++;
             
-              if (wins == targetWins) {
-              System.out.println("\n축하합니다! 승리 횟수(" + targetWins + "승)를 달성하여 게임을 종료합니다.");
-              break;
-            }      
-        } else {
+                if (wins == targetWins) {
+                    System.out.println("\n축하합니다! 목표 승리 횟수(" + targetWins + "승)를 달성했습니다!");
+                    break; // 목표 달성 시 루프 탈출
+                }      
+            } else {
                 System.out.println("졌습니다...");
                 losses++;
-                System.out.println("게임이 즉시 종료됩니다.");
-                break;
+                System.out.println("패배하여 게임이 즉시 종료됩니다.");
+                break; // 패배 시 루프 탈출
             }
         }
+
+        // [수정 2] 게임이 완전히 끝난 후(while 루프 밖) 최종 판수와 승률을 딱 한 번 출력합니다.
+        int totalGames = wins + draws + losses;
+        System.out.println("\n=====================================");
+        System.out.println("             [ 최종 결과 ]            ");
+        System.out.printf(" 총 플레이 판수 : %d판\n", totalGames);
+        System.out.printf(" 최종 전적       : %d승 %d무 %d패\n", wins, draws, losses);
+        
+        if (totalGames > 0) {
+            double winRate = (double) wins / totalGames * 100;
+            System.out.printf(" 최종 승률       : %.2f%%\n", winRate);
+        } else {
+            System.out.println(" 최종 승률       : 0.00%");
+        }
+        System.out.println("=====================================");
+
         sc.close();
     }
 
