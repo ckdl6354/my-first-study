@@ -53,8 +53,6 @@ public class RockPaperScissors {
             } else {
                 System.out.println("졌습니다...");
                 losses++;
-                System.out.println("패배하여 게임이 즉시 종료됩니다.");
-                break; // 패배 시 루프 탈출
             }
         }
 
