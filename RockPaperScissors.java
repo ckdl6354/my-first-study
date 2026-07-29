@@ -10,6 +10,11 @@ public class RockPaperScissors {
         int draws = 0;
         int losses = 0;
         
+        // [확률 조정 변수] 합이 100이 되도록 설정
+        int SCISSORS_RATE = 50; // 가위(1)
+        int ROCK_RATE = 30;     // 바위(2)
+        int PAPER_RATE = 20;    // 보(3)
+
         System.out.println("=== 가위바위보 ===");
         
         while (true) {
@@ -29,8 +34,18 @@ public class RockPaperScissors {
                 System.out.println("잘못된 입력입니다. 1, 2, 3 중에서 골라주세요.");
                 continue;
             }
+            // --- [핵심: 확률 기반 난수 생성] ---
+            int rate = random.nextInt(100); 
+            int com;
             
-            int com = random.nextInt(3) + 1;
+            if (rate < SCISSORS_RATE) {
+            com = 1; //가위
+        } else if (rate < SCISSORS_RATE + ROCK_RATE) {
+            com = 2; //바위
+        } else {
+            com = 3; //보
+        }
+            
 
             System.out.print("나: " + getChoiceName(user));
             System.out.println(" vs 컴퓨터: " + getChoiceName(com));
