@@ -26,15 +26,14 @@ public class RockPaperScissors {
             System.out.println("현재 전적: " + wins + "승 " + draws + "무 " + losses + "패(현재"+currentStreak+"연승 중)");
             System.out.print("1.가위 | 2.바위 | 3.보 | 4.종료 -> 선택: ");
             
-            int user = sc.nextInt();
-            if(!sc.hasNextlnt()){
+            if(!sc.hasNextInt()){
                 System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
                 sc.next();
                 continue;
             }
-             int user = sc.nextlnt();
+             int user = sc.nextInt();
             
-                // [수정 1] 사용자가 4번 종료를 눌렀을 때의 처리 블록
+                // 사용자가 4번 종료를 눌렀을 때의 처리 블록
             if (user == 4) {
                 System.out.println("사용자 요청으로 게임을 종료합니다.");
                 break; // 루프를 탈출하여 맨 아래의 최종 결과 출력으로 이동합니다.
