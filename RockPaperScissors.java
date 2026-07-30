@@ -9,6 +9,10 @@ public class RockPaperScissors {
         int wins = 0;
         int draws = 0;
         int losses = 0;
+        int currentStreak =0;
+        int maxStreak = 0;
+
+
         
         // [확률 조정 변수] 합이 100이 되도록 설정
         int SCISSORS_RATE = 50; // 가위(1)
@@ -19,12 +23,18 @@ public class RockPaperScissors {
         
         while (true) {
             System.out.println("\n-------------------------------------");
-            System.out.println("현재 전적: " + wins + "승 " + draws + "무 " + losses + "패");
+            System.out.println("현재 전적: " + wins + "승 " + draws + "무 " + losses + "패(현재"+currentStreak+"연승 중)");
             System.out.print("1.가위 | 2.바위 | 3.보 | 4.종료 -> 선택: ");
             
             int user = sc.nextInt();
-
-            // [수정 1] 사용자가 4번 종료를 눌렀을 때의 처리 블록
+            if(!sc.hasNextlnt()){
+                System.out.println("잘못된 입력입니다. 숫자를 입력하세요.");
+                sc.next();
+                continue;
+            }
+             int user = sc.nextlnt();
+            
+                // [수정 1] 사용자가 4번 종료를 눌렀을 때의 처리 블록
             if (user == 4) {
                 System.out.println("사용자 요청으로 게임을 종료합니다.");
                 break; // 루프를 탈출하여 맨 아래의 최종 결과 출력으로 이동합니다.
@@ -53,13 +63,17 @@ public class RockPaperScissors {
             if (user == com) {
                 System.out.println("비겼습니다!");
                 draws++;
+                currentStreak = 0;// 초기화
                 
             } else if ((user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2)) {
                 System.out.println("이겼습니다!");
-                wins++;                      
+                wins++; 
+                currentStreak++;// 1연승
+                if(currentStreak > maxStreak) maxStreak = currentStreak;
             } else {
                 System.out.println("졌습니다...");
                 losses++;
+                currentStreak=0;  //연승 초기화
             }
         }
 
@@ -69,7 +83,7 @@ public class RockPaperScissors {
         System.out.println("             [ 최종 결과 ]            ");
         System.out.printf(" 총 플레이 판수 : %d판\n", totalGames);
         System.out.printf(" 최종 전적       : %d승 %d무 %d패\n", wins, draws, losses);
-        
+        System.out.printf(" 최고 연승 기록 : %d승\n",maxStreak);
         if (totalGames > 0) {
             double winRate = (double) wins / totalGames * 100;
             System.out.printf(" 최종 승률       : %.2f%%\n", winRate);
