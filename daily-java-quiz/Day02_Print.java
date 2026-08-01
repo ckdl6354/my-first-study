@@ -1,4 +1,4 @@
-// https://jungol.co.kr/ Jol9009번 문제
+// 출처:https://jungol.co.kr/ Jol9009번 문제
 
 
 package com.test;
