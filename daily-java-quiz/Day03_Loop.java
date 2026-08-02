@@ -14,3 +14,25 @@ public class Day3_Loop {
 		sc.close();
 	}
 		}
+//
+        Scanner sc = new Scanner(System.in);
+        
+        for (;;) {
+            System.out.print("number? ");
+            
+            int num = sc.nextInt();
+            
+            if (num == 0) {
+                break;
+            }
+            
+            if (num > 0) {
+                System.out.println("positive integer");
+            } else {
+                System.out.println("negative number");
+            }
+        }
+        
+        sc.close();
+    }
+}
