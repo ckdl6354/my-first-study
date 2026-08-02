@@ -1,8 +1,9 @@
 // 출처:https://jungol.co.kr/ Jol537번 문제
 
-import java.util.Scanner;
+     // --- Jol537번 문제 ---
 
-public class Day3_Loop {
+    import java.util.Scanner;
+    public class Day3_Loop {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	int count = sc.nextInt();
@@ -14,9 +15,9 @@ public class Day3_Loop {
 		sc.close();
 	}
 		}
-//
+        // --- Jol538번 문제 ---        
+
         Scanner sc = new Scanner(System.in);
-        
         for (;;) {
             System.out.print("number? ");
             
