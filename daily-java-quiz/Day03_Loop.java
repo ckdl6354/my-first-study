@@ -1,4 +1,5 @@
-//
+// 출처:https://jungol.co.kr/ Jol537번 문제
+
 import java.util.Scanner;
 
 public class Day3_Loop {
