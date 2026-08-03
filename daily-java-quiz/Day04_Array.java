@@ -1,5 +1,6 @@
-// Jol 9074번 배열 연습문제 
+// 출처:https://jungol.co.kr/ Jol9074번 문제 
 
+// Jol 9074번 문제
 
 import java.util.Arrays;
 import java.util.Scanner;
