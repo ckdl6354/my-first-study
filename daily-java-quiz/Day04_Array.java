@@ -46,12 +46,12 @@ import java.util.Scanner;
 	//Jol 9066번 문제
 
         char [] ch = new char [26];
-		char input='Z';
+		char input='A';
 		for(int i =0;i<ch.length;i++) {
 			ch[i] = input;
-		input--;
+		input++;
 		}
-			for(int i=0;i<ch.length;i++) {
+			for(int i=ch<ch.length-1;i>=0;i--) {
 		System.out.print(ch[i]+" ");
 		}
 	}
