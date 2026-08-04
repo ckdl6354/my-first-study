@@ -43,5 +43,18 @@ public class Day4_Array{
 		System.out.print(ch[i]);
 		}
 	}
+	//Jol 9066번 문제
+
+char [] ch = new char [26];
+		char input='Z';
+		for(int i =0;i<ch.length;i++) {
+			ch[i] = input;
+		input--;
+		}
+			for(int i=0;i<ch.length;i++) {
+		System.out.print(ch[i]+" ");
+		}
+	}
+}
 		
 }
