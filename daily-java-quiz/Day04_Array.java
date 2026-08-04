@@ -23,5 +23,16 @@ public class Day4_Array{
 			System.out.println(i+": "+arr[i]+"개");
 		}
 	}
+// Jol 9063번 문제
+		Scanner sc = new Scanner(System.in);
+		int [] arr = new int [5];
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = sc.nextInt();
+		}
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i]+" ");
+		}
+	}
+}
 	}
 }
