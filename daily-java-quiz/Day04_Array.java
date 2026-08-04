@@ -33,6 +33,15 @@ public class Day4_Array{
 			System.out.print(arr[i]+" ");
 		}
 	}
-}
+	//Jol 555번 문제
+		Scanner sc = new Scanner(System.in);
+		String [] ch = new String [10];
+		for(int i=0;i<ch.length;i++) {
+			ch[i] = sc.next();
+		}
+		for(int i =0;i<ch.length;i++)
+		System.out.print(ch[i]);
+		}
 	}
+		
 }
