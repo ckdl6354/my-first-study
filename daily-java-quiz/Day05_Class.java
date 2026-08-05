@@ -36,4 +36,36 @@ static class Person{
 	}
 }
 
+//Jol 9131번 문제 해결
+
+package com.test;
+
+import java.util.Scanner;
+
+public class Day1Coding {
+	static class Person {
+		String name,Name;
+		int age,Age;
+ 
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("친한 친구의 이름과 나이를 입력하세요. ");
+
+		Person p = new Person();
+		Person p2= new Person();
+
+		p2.Name = "손예준";
+		p2.Age = 13;
+		
+		p.name = sc.next();
+		p.age = sc.nextInt();
+		
+		System.out.printf("당신의 이름 : %s 나이 : %d\n",p2.Name,p2.Age);
+		System.out.printf("친구의 이름 : %s 나이 : %d",p.name,p.age);
+	
+	}
+}
+
+
 
