@@ -1,5 +1,7 @@
-// Jol 9130번 문제
+// 출처:https://jungol.co.kr/ Jol9130번 문제
 
+
+// Jol 9130번 문제
 package com.test;
 import java.util.Scanner;
 public class Day1Coding {
