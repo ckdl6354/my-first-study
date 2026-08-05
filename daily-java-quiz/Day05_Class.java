@@ -17,6 +17,6 @@ public class Day1Coding {
 	p.name = sc.next();
 	System.out.println("당신의 나이는 몇살입니까?");
 	p.age = sc.nextInt();
-	System.out.printf("당신의 이름은 %s이고 나이는%d이세이군요.",p.name,p.age);
+	System.out.printf("당신의 이름은 %s이고 나이는%d이세이군요.\n",p.name,p.age);
 	}
 }
