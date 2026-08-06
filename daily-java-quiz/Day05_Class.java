@@ -21,20 +21,23 @@ public class Day1Coding {
 	}
 }
 //Jol 613번 문제 해결
-public class Day1Coding {
-static class Person{
-	String Name,School;
-	int Grade;
+        class Person {
+	    String Name;
+	    String School;
+	    int Grade;
 }
-	public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	Person p = new Person();
-	p.Name = sc.next();	
-	p.School = sc.next();
-	p.Grade = sc.nextInt();
-	System.out.printf("Name : %s \nSchool : %s \nGrade : %d",p.Name,p.School,p.Grade);
+        public class Day1Coding {
+        public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Person p = new Person();
+
+		String Name = sc.next();
+		String School = sc.next();
+		int Grade = sc.nextInt();
+		System.out.printf("Name : %s\nSchool : %s\nGrade : %d", Name, School, Grade);
 	}
 }
+
 
 //Jol 9131번 문제 해결
 
