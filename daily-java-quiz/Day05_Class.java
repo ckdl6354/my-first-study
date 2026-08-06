@@ -4,7 +4,7 @@
 // Jol 9130번 문제
 package com.test;
 import java.util.Scanner;
-public class Day1Coding {
+public class Day05_Class {
 static class Person{
 String name;
 int age;
@@ -26,7 +26,7 @@ String Name;
 String School;
 int Grade;
 }
-public class Day1Coding {
+public class Day05_Class {
 public static void main(String[] args) {
 Scanner sc = new Scanner(System.in);
 Person p = new Person();
@@ -40,7 +40,6 @@ System.out.printf("Name : %s\nSchool : %s\nGrade : %d", Name, School, Grade);
 
 
 //Jol 9131번 문제 해결
-import java.util.Scanner;
 class Person {
 String Name;
 int age;
@@ -48,7 +47,7 @@ int age;
 age=12;
 }
 }
-public class Day1Coding {
+public class Day05_Class {
 public static void main(String[] args) {
 Scanner sc = new Scanner(System.in);
 Person p = new Person();
@@ -76,22 +75,29 @@ grade=6;
 }
 }
 
-//Jol 614번 문제 해결
-public class Day1Coding {
-
-public static void main(String[] args) {
-	Scanner sc = new Scanner(System.in);
-	Person p = new Person();
-		 
-	String School = p.School;
-	int grade = p.grade;
+//Jol 614번 문제 해결class Person {
+	String School;
+	int grade;
+{
+	School = "Jejuelementary";
+	grade=6;
 	
-	String School1 = sc.next();
-	int grade1 = sc.nextInt();
-	
-	System.out.printf("%d grade in %s School\n",grade,School);
-	System.out.printf("%d grade in %s School",grade1,School1);
 }
 }
+public class Day05_Class {
 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Person p = new Person();
+             
+		String School = p.School;
+		int grade = p.grade;
+		
+		String School1 = sc.next();
+		int grade1 = sc.nextInt();
+		
+		System.out.printf("%d grade in %s School\n",grade,School);
+		System.out.printf("%d grade in %s School",grade1,School1);
+	}
+}
 
