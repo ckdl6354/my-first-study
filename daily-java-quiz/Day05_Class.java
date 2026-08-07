@@ -97,7 +97,7 @@ System.out.printf("친구의 이름 : %s, 나이 : %d",Name1,age1);
 	int score;
 	int score1;
 }
-    public class Day1Coding {
+    public class Day05_Class {
 	public static void main(String[] args) {
 		int sum = 0;
 		int sum1 = 0;
@@ -127,7 +127,7 @@ class Person {
 	int score;
 	int score1;
 }
-public class Day1Coding {
+public class Day05_Class {
 	public static void main(String[] args) {
 		int count =2;
 		Scanner sc = new Scanner(System.in);
