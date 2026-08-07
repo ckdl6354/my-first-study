@@ -119,4 +119,35 @@ System.out.printf("친구의 이름 : %s, 나이 : %d",Name1,age1);
     	System.out.printf("합계 %d %d", sum, sum1);
 	}
 }
+//Jol 615번 문제
+package com.test;
+import java.util.Scanner;
+class Person {
+	String name;
+	int score;
+	int score1;
+}
+public class Day1Coding {
+	public static void main(String[] args) {
+		int count =2;
+		Scanner sc = new Scanner(System.in);
+		Person p = new Person();
+		Person p1 = new Person();
+		
+		p.name = sc.next();
+		p.score = sc.nextInt();
+		p.score1 = sc.nextInt();
+
+		p1.name = sc.next();
+		p1.score = sc.nextInt();
+		p1.score1 = sc.nextInt();
+		
+        int avg = (p1.score+p.score)/2;
+		int avg1 = (p1.score1+p.score1)/2;
+		
+		System.out.printf("%s %d %d\n", p.name, p.score, p.score1);
+		System.out.printf("%s %d %d\n", p1.name, p1.score, p1.score1);
+		System.out.printf("avg %d %d", (int)avg, (int)avg1);
+	}
+}
 
