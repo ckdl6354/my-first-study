@@ -1,6 +1,5 @@
 // 출처:https://jungol.co.kr/ Jol9130번 문제
 
-
 // Jol 9130번 문제
 package com.test;
 import java.util.Scanner;
@@ -62,30 +61,20 @@ int age1 = sc.nextInt();
 System.out.printf("당신의 이름 : %s, 나이 : %d\n",Name,age);
 System.out.printf("친구의 이름 : %s, 나이 : %d",Name1,age1);
 }
-}
-package com.test;
-import java.util.Scanner;
-class Person {
-String School;
-int grade;
-{
-School = "Jejuelementary";
-grade=6;
-
-}
-}
-
-//Jol 614번 문제 해결class Person {
-	String School;
-	int grade;
-{
-	School = "Jejuelementary";
-	grade=6;
 	
-}
-}
-public class Day05_Class {
+//Jol 614번 문제 해결
 
+	package com.test;
+    import java.util.Scanner;
+    class Person {
+    String School;
+    int grade;
+{
+    School = "Jejuelementary";
+    grade=6;
+}
+}
+    public class Day05_Class {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Person p = new Person();
@@ -98,6 +87,36 @@ public class Day05_Class {
 		
 		System.out.printf("%d grade in %s School\n",grade,School);
 		System.out.printf("%d grade in %s School",grade1,School1);
+	}
+}
+//Jol 9132번 문제
+    package com.test;
+    import java.util.Scanner;
+    class Person {
+	String name;
+	int score;
+	int score1;
+}
+    public class Day1Coding {
+	public static void main(String[] args) {
+		int sum = 0;
+		int sum1 = 0;
+		Scanner sc = new Scanner(System.in);
+		Person p = new Person();
+		Person p1 = new Person();
+     	p.name = sc.next();
+		p.score = sc.nextInt();
+		p.score1 = sc.nextInt();
+		
+    	p1.name = sc.next();
+		p1.score = sc.nextInt();
+		p1.score1 = sc.nextInt();
+		
+    	sum += p.score+p1.score;
+		sum1 += p.score1+p1.score1;
+		System.out.printf("%s %d %d\n", p.name, p.score, p.score1);
+		System.out.printf("%s %d %d\n", p1.name, p1.score, p1.score1);
+    	System.out.printf("합계 %d %d", sum, sum1);
 	}
 }
 
