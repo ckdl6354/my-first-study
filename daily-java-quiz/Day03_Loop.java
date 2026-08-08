@@ -4,7 +4,11 @@
 	public class Day3_Loop {
 	public static void main(String[] args) {
 	for(char ch ='A';ch<='Z';ch++) {
-	System.out.println(ch);
+	System.out.print(ch);
+	
+	// --- 알파벳 반대로 출력
+	for(char ch1 = 'Z';ch>='A';ch--) {
+	System.out.print(ch1);
 	}
   }	
 }
