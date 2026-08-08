@@ -1,4 +1,4 @@
-// 출처:https://jungol.co.kr/ Jol537,Jol538번 문제
+// 출처:https://jungol.co.kr/ Jol9039,Jol9040,Jol537,Jol538번 문제
 
  //--- Jol 9039번 문제
 	public class Day3_Loop {
@@ -12,7 +12,24 @@
 	}
   }	
 }
+public class Day3_Loop {
+	public static void main(String[] args) {
 
+		int num = 1;
+		int sum = 0;
+		while (true) {
+			sum += num;
+			if (num >= 10) {
+				num++;
+				break;
+			}
+			num++;
+		}
+		System.out.println(String.format("1부터 10까지의 합 = %d", sum));
+		System.out.println(String.format("while문이 끝난 후의 num의 값 = %d", num));
+	}
+}
+		
     // --- Jol537번 문제 ---
 
     import java.util.Scanner;
