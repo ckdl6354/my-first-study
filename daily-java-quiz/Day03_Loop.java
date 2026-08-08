@@ -7,7 +7,7 @@
 	System.out.print(ch);
 	
 	// --- 알파벳 반대로 출력
-	for(char ch1 = 'Z';ch>='A';ch--) {
+	for(char ch1 = 'Z';ch1>='A';ch1--) {
 	System.out.print(ch1);
 	}
   }	
