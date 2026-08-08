@@ -1,6 +1,15 @@
-// 출처:https://jungol.co.kr/ Jol537번 문제
+// 출처:https://jungol.co.kr/ Jol537,Jol538번 문제
 
-     // --- Jol537번 문제 ---
+ //--- Jol 9039번 문제
+	public class Day3_Loop {
+	public static void main(String[] args) {
+	for(char ch ='A';ch<='Z';ch++) {
+	System.out.println(ch);
+	}
+  }	
+}
+
+    // --- Jol537번 문제 ---
 
     import java.util.Scanner;
     public class Day3_Loop {
@@ -33,7 +42,5 @@
                 System.out.println("negative number");
             }
         }
-        
-        sc.close();
     }
 }
