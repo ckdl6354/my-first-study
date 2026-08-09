@@ -54,6 +54,7 @@ class Hero { // 모양과 기능을 가진 설계도 (변수)
 			while (myHero.hp > 0 && boss.hp > 0) {
 				System.out.println("사냥 : 1 정비 : 2");
 				int num = sc.nextInt();
+				sc.nextLine();
 				if(num == 1){
 					System.out.println("몬스터를 발견했습니다!);
 				}
