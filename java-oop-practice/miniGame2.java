@@ -54,9 +54,11 @@ class Hero { // 모양과 기능을 가진 설계도 (변수)
 			Monster boss = new Monster("대왕지네", 200, 20);
 
 			while (myHero.hp > 0 && boss.hp > 0) {
-				System.out.println("엔터(Enter)을 누르면 공격");
-				sc.nextLine();
-
+				System.out.println("사냥 : 1 정비 : 2");
+				int num = sc.nextInt();
+				if(num == 1){
+					System.out.println("몬스터를 발견했습니다!);
+				}
 				myHero.attack(boss);
 				if (boss.hp <= 0) {
 					System.out.println(boss.name + "를 물리쳤습니다.");
