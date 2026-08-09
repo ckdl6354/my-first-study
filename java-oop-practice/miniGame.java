@@ -12,7 +12,7 @@ class Warrior { // 모양과 기능을 가진 설계도 (변수)
 		System.out.println(name + "이 (가) " + MagePower + "의 데미지로 공격합니다!");
 	}
 }
-	public class TestGame {
+	public class miniGame {
 
 		public static void main(String[] args) {
 			Warrior w1 = new Warrior(); // 실제로 만들어진 진짜물건
