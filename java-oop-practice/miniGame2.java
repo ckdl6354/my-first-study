@@ -1,0 +1,68 @@
+package com.test;
+
+import java.util.Scanner;
+
+class Hero { // 모양과 기능을 가진 설계도 (변수)
+	String name;
+	int hp;
+	int attackPower;
+
+	public Hero(String name, int hp, int attackPower) {
+		this.name = name;
+		this.hp = hp;
+		this.attackPower = attackPower;
+	}
+
+	public void attack(Monster target) {
+		System.out.println(this.name + "이(가)" + target.name + "을 공격합니다! (데미지:" + this.attackPower + ")");
+		target.hp -= this.attackPower;
+	}
+}
+
+	class Monster {
+		String name;
+		int hp;
+		int attackPower;
+
+		public Monster(String name, int hp, int attackPower) {
+			this.name = name;
+			this.hp = hp;
+			this.attackPower = attackPower;
+		}
+
+		public void attack(Hero target) {
+			System.out.println(this.name + "이(가)" + target.name + "을 반격합니다! (데미지:" + this.attackPower + ")");
+			target.hp -= this.attackPower;
+		}
+
+	}
+
+	public class miniGame2 {
+
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+
+			Hero myHero = new Hero("마검사", 120, 35);
+			Monster boss = new Monster("대왕지네", 200, 20);
+
+			while (myHero.hp > 0 && boss.hp > 0) {
+				System.out.println("엔터(Enter)을 누르면 공격");
+				sc.nextLine();
+
+				myHero.attack(boss);
+				if (boss.hp <= 0) {
+					System.out.println(boss.name + "를 물리쳤습니다.");
+					break;
+				}
+				System.out.println(boss.name + "의 남은 체력: " + boss.hp);
+
+				boss.attack(myHero);
+				if (myHero.hp <= 0) {
+					System.out.println(myHero.name + "이(가) 쓰러졌습니다. 게임 오버");
+					break;
+
+				}
+				
+			}
+		}
+	}
