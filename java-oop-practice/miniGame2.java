@@ -1,5 +1,3 @@
-package com.test;
-
 import java.util.Scanner;
 
 class Hero { // 모양과 기능을 가진 설계도 (변수)
