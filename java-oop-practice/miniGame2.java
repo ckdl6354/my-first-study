@@ -16,6 +16,14 @@ class Hero { // 모양과 기능을 가진 설계도 (변수)
 	public void attack(Monster target) {
 		System.out.println(this.name + "이(가)" + target.name + "을 공격합니다! (데미지:" + this.attackPower + ")");
 		target.hp -= this.attackPower;
+        int chance = (int) (Math.random() * 10);
+		if (chance < 3) {
+			int criticalDamage = this.attackPower * 2;
+			target.hp -= criticalDamage;
+			System.out.println("크리티컬 히트!! :" + criticalDamage);
+		} else {
+			target.hp -= this.attackPower;
+		}
 	}
 }
 
