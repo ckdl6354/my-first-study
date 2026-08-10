@@ -56,6 +56,7 @@ import java.util.Scanner;
 		}
 	}
 }
+// Jol 151번 문제
 public class Day04_Array {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
