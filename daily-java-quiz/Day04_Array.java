@@ -1,5 +1,5 @@
 // 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번
-//151번,556번,9076번 문제풀이
+//151번,556번,9076번,557번 문제풀이
 
        // Jol 9074번 문제
 import java.util.Arrays;
@@ -88,7 +88,19 @@ import java.util.Scanner;
 				System.out.print(arr[i]+" ");
 			}
 		}
+        // Jol 557번 문제풀이
+		Scanner sc = new Scanner(System.in);
+		String[] ch = new String[10];
+		for (int i = 0; i < ch.length; i++) {
+			ch[i] = sc.next();
+		}
+		for (int i = 0; i < ch.length; i++) {
+			if (i == 0 || i == 3 || i == 6) {
+				System.out.print(ch[i]+" ");
+			}
+		}
 	}
 }
+
  
 
