@@ -1,4 +1,4 @@
-// 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번,151번 문제
+// 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번,151번,556번 문제
 
 // Jol 9074번 문제
 
@@ -57,8 +57,6 @@ import java.util.Scanner;
 	}
 }
 // Jol 151번 문제
-public class Day04_Array {
-	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[5];
 		int sum = 0;
@@ -71,5 +69,14 @@ public class Day04_Array {
 		System.out.print(sum);
 	}
 }
-		
+// Jol 151번 문제
+        Scanner sc = new Scanner(System.in);
+		int [ ] arr = new int [10];
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = sc.nextInt();
+		}
+		for(int i=0;i<arr.length;i++) {
+		System.out.print(arr[i]);
+	}
 }
+
