@@ -1,10 +1,9 @@
-// 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번,151번,556번 문제
+// 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번
+//151번,556번,9076번 문제풀이
 
-// Jol 9074번 문제
-
+       // Jol 9074번 문제
 import java.util.Arrays;
 import java.util.Scanner;
-
         public class Day4_Array{
 	    public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -23,7 +22,7 @@ import java.util.Scanner;
 			System.out.println(i+": "+arr[i]+"개");
 		}
 	}
-// Jol 9063번 문제
+        // Jol 9063번 문제
 		Scanner sc = new Scanner(System.in);
 		int [] arr = new int [5];
 		for(int i=0;i<arr.length;i++) {
@@ -33,7 +32,7 @@ import java.util.Scanner;
 			System.out.print(arr[i]+" ");
 		}
 	}
-	//Jol 555번 문제
+	    //Jol 555번 문제
 		Scanner sc = new Scanner(System.in);
 		String [] ch = new String [10];
 		for(int i=0;i<ch.length;i++) {
@@ -43,8 +42,7 @@ import java.util.Scanner;
 		System.out.print(ch[i]);
 		}
 	}
-	//Jol 9066번 문제
-
+	    //Jol 9066번 문제
         char [] ch = new char [26];
 		char input='A';
 		for(int i =0;i<ch.length;i++) {
@@ -56,7 +54,7 @@ import java.util.Scanner;
 		}
 	}
 }
-// Jol 151번 문제
+        // Jol 151번 문제
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[5];
 		int sum = 0;
@@ -69,7 +67,7 @@ import java.util.Scanner;
 		System.out.print(sum);
 	}
 }
-// Jol 151번 문제
+        // Jol 151번 문제
         Scanner sc = new Scanner(System.in);
 		int [ ] arr = new int [10];
 		for(int i=0;i<arr.length;i++) {
@@ -79,4 +77,18 @@ import java.util.Scanner;
 		System.out.print(arr[i]);
 	}
 }
+        // Jol 9076번 문제
+        Scanner sc = new Scanner(System.in);
+		int [] arr = new int [10];
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = sc.nextInt();
+		}
+		for(int i=0;i<arr.length;i++) {
+			if(i==2||i==4||i==9) {
+				System.out.print(arr[i]+" ");
+			}
+		}
+	}
+}
+ 
 
