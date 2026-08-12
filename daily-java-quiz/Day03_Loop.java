@@ -1,19 +1,18 @@
 // 출처:https://jungol.co.kr/ Jol9039,Jol9040,Jol537,Jol538번 문제
 
- //--- Jol 9039번 문제
+    //--- Jol 9039번 문제
 	public class Day3_Loop {
 	public static void main(String[] args) {
 	for(char ch ='A';ch<='Z';ch++) {
 	System.out.print(ch);
 	
-	// --- 알파벳 반대로 출력
+	 // --- 알파벳 반대로 출력
 	for(char ch1 = 'Z';ch1>='A';ch1--) {
 	System.out.print(ch1);
 	}
   }	
-}
-public class Day3_Loop {
-	public static void main(String[] args) {
+    
+		//--- Jol 9039번 문제
 
 		int num = 1;
 		int sum = 0;
