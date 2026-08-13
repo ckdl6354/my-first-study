@@ -113,6 +113,26 @@ import java.util.Scanner;
        for(int i=0;i<count;i++) {
     	   if(i%2==1) {
     		   System.out.print(arr[i]+" ");
+		   }
+	   }
+       //Jol 558번 문제풀이
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[100];
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			 arr[i] = sc.nextInt();
+		if(arr[i]==0) {
+			break;
+		}
+		count++;
+		}
+		for(int i = count -1;i>=0;i--) {
+			System.out.print(arr[i]+" ");
+		}
+
+
+
+			   
 
  
 
