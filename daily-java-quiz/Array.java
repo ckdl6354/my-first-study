@@ -1,5 +1,5 @@
 // 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번
-//151번,556번,9076번,557번,9068번 문제풀이
+//151번,556번,9076번,557번,9068번,558번,559번 문제풀이
 
        // Jol 9074번 문제
 import java.util.Arrays;
@@ -128,8 +128,17 @@ import java.util.Scanner;
 		}
 		for(int i = count -1;i>=0;i--) {
 			System.out.print(arr[i]+" ");
-		}
-
+	}
+}
+        //Jol 559번문제
+        Scanner sc = new Scanner(System.in);
+		double [] scores = {85.6,79.5,83.1,80.0,78.2,75.0};
+		int class1 = sc.nextInt();
+		int class2 = sc.nextInt();
+		double sum = scores[class1 -1]+scores[class2-1];
+		System.out.printf("%.1f\n",sum);
+   }
+}
 
 
 			   
