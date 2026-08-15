@@ -155,7 +155,7 @@ import java.util.Scanner;
 
         //Jol 560번문제
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine()); //띄어쓰기기준으로 짤라냄
 		int[] arry = new int[10];
 		for (int i = 0; i < arry.length; i++) {
 			arry[i] = Integer.parseInt(st.nextToken());
