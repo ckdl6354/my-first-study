@@ -150,7 +150,25 @@ import java.util.Scanner;
 			}
 		}
 		System.out.println(max);
+	}
+}
 
+        //Jol 560번문제
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int[] arry = new int[10];
+		for (int i = 0; i < arry.length; i++) {
+			arry[i] = Integer.parseInt(st.nextToken());
+		}
+		int min = arry[0];
+		for (int i = 0; i < arry.length; i++) {
+			if (arry[i] >= 1000) {
+				break;
+			} else if (arry[i] < min) {
+				min = arry[i];
+			}
+		}
+		System.out.println(min);
 
 
 			   
