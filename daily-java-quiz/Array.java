@@ -139,6 +139,18 @@ import java.util.Scanner;
 		System.out.printf("%.1f\n",sum);
    }
 }
+    //Jol 9070번 문제
+	Scanner sc = new Scanner(System.in);
+		int[] arry = new int[10];
+		int max = 0;
+		for (int i = 0; i < arry.length; i++) {
+			arry[i] = sc.nextInt();
+			if (arry[i]>max) {
+				max = arry[i];
+			}
+		}
+		System.out.println(max);
+
 
 
 			   
