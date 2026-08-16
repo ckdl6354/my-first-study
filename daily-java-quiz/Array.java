@@ -169,6 +169,24 @@ import java.util.Scanner;
 			}
 		}
 		System.out.println(min);
+    }
+}
+        //9071번 문제
+        int [ ] arr = new int [10];
+		for(int i=0;i<arr.length;i++) {
+			arr[i] = sc.nextInt();
+		}
+		int min = Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
+		for(int i =0;i<arr.length;i++) {
+			if(arr[i]%3!=1 && arr[i]<min) {
+				min = arr[i];
+			}else if(arr[i]%2==0&&arr[i]>=max) {
+				max= arr[i];
+
+			}
+		}
+		System.out.println(min+" "+max);
 
 
 			   
