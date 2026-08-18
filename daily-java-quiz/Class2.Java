@@ -1,5 +1,6 @@
-import java.util.Scanner;
+// 출처:https://jungol.co.kr/ Jol 616번
 
+import java.util.Scanner;
 Public class Class2{
 static class Point{
      double x,y;
