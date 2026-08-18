@@ -1,4 +1,4 @@
-//Jol 613번 문제풀이
+//Jol 613번 문제풀이 
 import java.util.Scanner;
   public class Class2 {
   String Name;
