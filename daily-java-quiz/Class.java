@@ -1,4 +1,4 @@
-// 출처:https://jungol.co.kr/ Jol9130번 문제
+// 출처:https://jungol.co.kr/ Jol 9130번,613번,9131번,614번,9132번,615번 문제
 
 // Jol 9130번 문제
 package com.test;
