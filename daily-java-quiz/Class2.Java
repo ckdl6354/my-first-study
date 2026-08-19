@@ -23,19 +23,17 @@ static class Point{
 		System.out.printf("(%.1f,%.1f)\n",centerX,centerY);
 	}
 }
-
-class Member {
+//Jol 9135번 문제
+    class Member {
 	int id;
 	int money;
-
 	public Member(int id, int money) {
 		this.id = id;
 		this.money = money;
 	}
 }
 
-//Jol 9135번 문제
-public class Day1Coding {
+public class Class2 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Member[] members = new Member[5];
