@@ -4,37 +4,37 @@
 // Jol 9130번 문제
 package com.test;
 import java.util.Scanner;
-public class Day05_Class {
-static class Person{
-String name;
-int age;
+     public class Day05_Class {
+     static class Person{
+     String name;
+     int age;
 }
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-Person p = new Person();
+     public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     Person p = new Person();
 
-System.out.println("당신의 이름은 무엇입니까? ");
-p.name = sc.next();
-System.out.println("당신의 나이는 몇살입니까?");
-p.age = sc.nextInt();
-System.out.printf("당신의 이름은 %s이고 나이는%d이세이군요.\n",p.name,p.age);
+     System.out.println("당신의 이름은 무엇입니까? ");
+     p.name = sc.next();
+     System.out.println("당신의 나이는 몇살입니까?");
+     p.age = sc.nextInt();
+     System.out.printf("당신의 이름은 %s이고 나이는%d이세이군요.\n",p.name,p.age);
 }
 }
 //Jol 613번 문제 해결
-class Person {
-String Name;
-String School;
-int Grade;
+     class Person {
+     String Name;
+     String School;
+     int Grade;
 }
-public class Day05_Class {
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-Person p = new Person();
+     public class Day05_Class {
+     public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     Person p = new Person();
 
-String Name = sc.next();
-String School = sc.next();
-int Grade = sc.nextInt();
-System.out.printf("Name : %s\nSchool : %s\nGrade : %d", Name, School, Grade);
+     String Name = sc.next();
+     String School = sc.next();
+     int Grade = sc.nextInt();
+     System.out.printf("Name : %s\nSchool : %s\nGrade : %d", Name, School, Grade);
 }
 }
 
