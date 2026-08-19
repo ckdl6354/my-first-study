@@ -1,4 +1,5 @@
-// 출처:https://jungol.co.kr/ Jol 9130번,613번,9131번,614번,9132번,615번 문제
+// 출처:https://jungol.co.kr/ 
+//Jol 9130번,613번,9131번,614번,9132번,615번 문제
 
 // Jol 9130번 문제
 package com.test;
@@ -39,27 +40,27 @@ System.out.printf("Name : %s\nSchool : %s\nGrade : %d", Name, School, Grade);
 
 
 //Jol 9131번 문제 해결
-class Person {
-String Name;
-int age;
-{Name = "손예준";
-age=12;
+    class Person {
+    String Name;
+    int age;
+{   Name = "손예준";
+    age=12;
 }
 }
-public class Day05_Class {
-public static void main(String[] args) {
-Scanner sc = new Scanner(System.in);
-Person p = new Person();
+    public class Day05_Class {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    Person p = new Person();
 
-String Name = p.Name;
-int age = p.age;
+    String Name = p.Name;
+    int age = p.age;
 
-System.out.println("친한 친구의 이름과 나이를 입력하세요. ");
-String Name1 = sc.next();
-int age1 = sc.nextInt();
+    System.out.println("친한 친구의 이름과 나이를 입력하세요. ");
+    String Name1 = sc.next();
+    int age1 = sc.nextInt();
 
-System.out.printf("당신의 이름 : %s, 나이 : %d\n",Name,age);
-System.out.printf("친구의 이름 : %s, 나이 : %d",Name1,age1);
+    System.out.printf("당신의 이름 : %s, 나이 : %d\n",Name,age);
+    System.out.printf("친구의 이름 : %s, 나이 : %d",Name1,age1);
 }
 	
 //Jol 614번 문제 해결
