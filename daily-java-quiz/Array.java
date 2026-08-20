@@ -1,5 +1,5 @@
 // 출처:https://jungol.co.kr/ Jol9074번,9063번,555번,9066번
-//151번,556번,9076번,557번,9068번,558번,559번,9070번,560번 문제풀이
+//151번,556번,9076번,557번,9068번,558번,559번,9070번,560번,9071번 문제풀이
 
        // Jol 9074번 문제
 import java.util.Arrays;
@@ -189,6 +189,34 @@ import java.util.Scanner;
 		System.out.println(min+" "+max);
 
  //Jol 9071번 문제
+Scanner sc = new Scanner(System.in);
+        
+        int[] numbers = new int[10];
+        for (int i = 0; i < 10; i++) {
+            numbers[i] = sc.nextInt();
+        }
+        
+        int minOdd = Integer.MAX_VALUE;   
+        int maxEven = Integer.MIN_VALUE;  
+        
+        for (int i = 0; i < 10; i++) {
+            int num = numbers[i];
+            
+            if (num % 2 != 0) { 
+                if (num < minOdd) {
+                    minOdd = num;
+                }
+            } else { 
+                if (num > maxEven) {
+                    maxEven = num;
+                }
+            }
+        }
+        System.out.println(minOdd + " " + maxEven);
+        sc.close();
+    }
+}
+
 			   
 
  
