@@ -188,7 +188,7 @@ import java.util.Scanner;
 		}
 		System.out.println(min+" "+max);
 
-
+ //Jol 9071번 문제
 			   
 
  
