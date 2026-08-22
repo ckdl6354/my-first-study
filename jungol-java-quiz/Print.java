@@ -1,6 +1,6 @@
 // 출처:https://jungol.co.kr/ Jol9009번,9010번,9011번,511번 문제
 
-public class Day02_Print {
+public class Print {
 	public static void main(String[] args) {
  	
 	// --- Jol9009번 문제 ---	
