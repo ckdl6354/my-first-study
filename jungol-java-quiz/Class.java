@@ -4,7 +4,7 @@
 // Jol 9130번 문제
 package com.test;
 import java.util.Scanner;
-     public class Day05_Class {
+     public class Class {
      static class Person{
      String name;
      int age;
@@ -47,7 +47,7 @@ import java.util.Scanner;
     age=12;
 }
 }
-    public class Day05_Class {
+    public class Class {
     public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     Person p = new Person();
@@ -75,7 +75,7 @@ import java.util.Scanner;
     grade=6;
 }
 }
-    public class Day05_Class {
+    public class Class {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		Person p = new Person();
@@ -98,7 +98,7 @@ import java.util.Scanner;
 	int score;
 	int score1;
 }
-    public class Day05_Class {
+    public class Class {
 	public static void main(String[] args) {
 		int sum = 0;
 		int sum1 = 0;
@@ -128,7 +128,7 @@ class Person {
 	int score;
 	int score1;
 }
-public class Day05_Class {
+public class Class {
 	public static void main(String[] args) {
 		int count =2;
 		Scanner sc = new Scanner(System.in);
