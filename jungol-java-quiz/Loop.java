@@ -1,7 +1,7 @@
 // 출처:https://jungol.co.kr/ Jol9039,Jol9040,Jol537,Jol538번 문제
 
     //--- Jol 9039번 문제
-	public class Day3_Loop {
+	public class Loop {
 	public static void main(String[] args) {
 	for(char ch ='A';ch<='Z';ch++) {
 	System.out.print(ch);
@@ -32,7 +32,7 @@
     // --- Jol537번 문제 ---
 
     import java.util.Scanner;
-    public class Day3_Loop {
+    public class Loop {
 	public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	int count = sc.nextInt();
