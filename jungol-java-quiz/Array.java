@@ -4,7 +4,7 @@
        // Jol 9074번 문제
 import java.util.Arrays;
 import java.util.Scanner;
-        public class Day4_Array{
+        public class Array{
 	    public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int[] arr = new int[11];
