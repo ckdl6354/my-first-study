@@ -1,4 +1,5 @@
-//문제내용:https://school.programmers.co.kr/learn/courses/30/lessons/181934
+//문제링크:https://school.programmers.co.kr/learn/courses/30/lessons/181934
+
 class Solution {
     public int solution(String ineq, String eq, int n, int m) {
              if(ineq.equals(">") && eq.equals("=")){
