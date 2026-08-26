@@ -1,6 +1,5 @@
 //문제링크:https://school.programmers.co.kr/learn/courses/30/lessons/181941?language=java
 
-
 class 문자열변환{
   public String solution(String [] arr){
     //빈 문자열("")을 구분자로 사용하여 배열의 모든 원소를 이어 붙임
