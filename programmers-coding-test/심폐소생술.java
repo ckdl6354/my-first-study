@@ -1,5 +1,5 @@
 //문제 :https://school.programmers.co.kr/learn/courses/30/lessons/340203
-class Solution {
+class 심폐소생술 {
     public int[] solution(String[] cpr) {
         int[] answer = {0, 0, 0, 0, 0};
         String[] basic_order = {"check", "call", "pressure", "respiration", "repeat"};
