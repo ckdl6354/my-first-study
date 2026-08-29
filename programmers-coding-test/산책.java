@@ -1,6 +1,6 @@
 //문제 출처 :https://school.programmers.co.kr/learn/courses/30/lessons/250129 
 
-class Solution {
+class 산책 {
     public int[] solution(String route) {
         int east = 0;
         int north = 0;
