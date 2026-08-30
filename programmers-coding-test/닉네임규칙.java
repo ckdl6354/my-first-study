@@ -1,6 +1,6 @@
 //문제 출처:https://school.programmers.co.kr/learn/courses/30/lessons/340200/solution_groups?language=java&type=my
 
-class Solution {
+class 닉네임규칙 {
     public String solution(String nickname) {
         String answer = "";
         for(int i=0; i<nickname.length(); i++){
