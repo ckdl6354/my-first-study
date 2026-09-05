@@ -1,3 +1,5 @@
+//문제출처:https://school.programmers.co.kr/learn/courses/30/lessons/340204
+
 import java.util.Scanner;
 
 public class 병과분류 {
