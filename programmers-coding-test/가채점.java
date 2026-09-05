@@ -1,3 +1,5 @@
+//문제출처:https://school.programmers.co.kr/learn/courses/30/lessons/250128
+
 class 가채점 {
     public String[] solution(int[] numbers, int[] our_score, int[] score_list) {
         int num_student = numbers.length;
