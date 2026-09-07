@@ -1,4 +1,4 @@
-## 📌 [TIL] JSP 핵심 개념: Request, Response, Forward
+## JSP 핵심 개념: Request, Response, Forward
 
 JSP/Servlet을 이용한 웹 개발에서 클라이언트와 서버 간의 데이터 흐름과 페이지 이동을 제어하는 핵심 개념 정리
 
