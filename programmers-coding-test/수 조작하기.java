@@ -2,7 +2,8 @@
 
 class 수 조작하기 {
     public int solution(int n, String control) {
-       for(int i=0;i<control.length();i++){  // for(char ch : control.toCharArray())으로도 사용가능하다
+       for(int i=0;i<control.length();i++){  
+    // for(char ch : control.toCharArray())으로도 사용가능하다
             char ch =control.charAt(i);
        
         switch(ch){
