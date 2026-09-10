@@ -3,7 +3,7 @@ class Solution {
     public int solution(int a, int b, int c) {
         int sum =0;
             if(a==b && b==c){
-        sum=(a+b+c)*(a*a+b*b+c*c)*(a*a*a+b*b*b+c*c*c);
+        sum=(a+b+c)*(a*a+b*b+c*c)*(a*a*a+b*b*b+c*c*c);  // 제곱을 a*a로 표현
                 return sum;
             }else if(a==b || b==c || c==a){
             sum = (a+b+c)*(a*a+b*b+c*c);
