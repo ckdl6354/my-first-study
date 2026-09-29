@@ -7,7 +7,7 @@ public class 홀짝 {
         int n = sc.nextInt();
             if(n%2==0) {
     	System.out.println(n+" is even");
-    }else if(n%3==1) {
+    }else {
     	System.out.println(n+" is odd");
     }
     }
