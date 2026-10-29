@@ -1,15 +1,17 @@
 name: Restore Grass
-on: push
+on:
+  workflow_dispatch: # 직접 버튼을 눌러서 실행하는 방식으로 변경 (무한 루프 방지)
 jobs: 
   backdate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }} # 마스터 키 권한 부여
           fetch-depth: 0
       - name: Commit yesterday
         run: |
           git config --global user.name "ckdl6354"
           git config --global user.email "ckdl6354@gmail.com"
-          git commit --allow-empty -m "6개월 연속 잔디 복구 최종" --date="2026-10-29 23:50:00 +0900"
-          git push origin HEAD 
+          git commit --allow-empty -m "6개월 연속 잔디 복구 최종 완료" --date="2026-10-29 23:50:00 +0900"
+          git push origin HEAD
