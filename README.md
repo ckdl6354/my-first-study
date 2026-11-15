@@ -12,8 +12,16 @@
 
 ---
 
+### 🛠️ 사용 언어 및 플랫폼
+![Java](https://shields.io)
+![Programmers](https://shields.io)
 
+---
 
+### 📝 기록 규칙 (Code Convention)
+모든 풀이 파일 상단에는 문제 출처 링크를 남기고, 코드 내부에는 동작 원리를 주석으로 기록합니다.
+
+---
 # my-first-study
 ![ckdl6354's GitHub stats](https://github-stats-extended.vercel.app/api?username=ckdl6354&show_icons=true&theme=radial)
 [![GitHub Trophy](https://github-trophies.vercel.app/?username=ckdl6354)](https://github.com/ckdl6354)
