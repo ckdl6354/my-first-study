@@ -12,9 +12,15 @@
 
 ---
 
-### 🛠️ 사용 언어 및 플랫폼
-![Java](https://shields.io)
-![Programmers](https://shields.io)
+### 🛠️ 기술 스택 및 학습 도구
+
+| 구분 | 사용 기술 및 도구 |
+| :--- | :--- |
+| **Language & Algorithm** | `Java` · `Programmers` · `Baekjoon` |
+| **Full-Stack Roadmap** | `Spring Boot` · `HTML5` · `CSS3` · `JavaScript` · `MySQL` |
+| **Tools & AI** | `Git` · `GitHub` · `IntelliJ IDEA` · `VS Code` |
+
+
 
 ---
 
