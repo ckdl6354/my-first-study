@@ -12,3 +12,37 @@ class Solution {
         return sum;
     }
 }
+
+public class MatrixAddition  {
+    public static void main(String[] args) {
+        int[][] matrixA = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+        
+        int[][] matrixB = {
+            {7, 8, 9},
+            {10, 11, 12}
+        };
+
+        int rows = matrixA.length;  //rows에 matrixA의 길이만큼 int형 숫자 대입
+        int cols =  matrixA[0].length; //cols에 matrixA[0]의 길이만큼 int형 숫자 대입
+
+        int[][] result = new int[ rows ][ cols ];  //int형 2차원 배열 rows,cols의 숫자만큼 배열크기생성
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = matrixA[i][j]  + matrixB[i][j];  // i랑j를 반복문을통해 matrixA[i][j] + matrixB[i][j]를 더함
+            }
+        }
+
+        // 결과 출력
+        System.out.println("=== 행렬 덧셈 결과 ===");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(result[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
