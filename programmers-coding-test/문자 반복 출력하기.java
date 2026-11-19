@@ -10,3 +10,18 @@ class Solution {
         return sb.toString();
     }
 }
+
+
+class Solution {
+    public String solution(String my_string) {
+        StringBuilder sb = new StringBuilder(); //문자열 담을 sb생성
+        for (char c : my_string.toCharArray()) { // my_string을 문자 배열로 쪼개 한 글자씩 c에 담아 반복
+            sb.append(c);  //sb에 현재 문자 한 개를 기본으로 추가
+            if (c >= 'A' && c <= 'Z') {  // c가 대문자 'A' 이상이고 'Z' 이하이면 (즉, 영어 대문자이면)
+                sb.append(c); // 대문자이므로 한 번 더 추가
+            }
+        }
+        
+        return sb.toString();
+    }
+}
