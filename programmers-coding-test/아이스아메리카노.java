@@ -10,4 +10,13 @@ class Solution {
     }
 }
 
-
+//문제 다르게 풀어보기
+class Solution {
+    public int[] solution(int flour) {
+    int one = flour/350;
+    int two =  flour%350;
+    int[] answer = {one,two};
+    return answer;
+    }
+}
+ 
