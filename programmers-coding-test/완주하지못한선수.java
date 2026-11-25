@@ -32,7 +32,7 @@ class Solution {
             book.put(borrowed[i],book.getOrDefault(borrowed[i],0)+1);
         }
         for(int i=0;i<returned.length;i++){
-            book.put(returned[i],book.get(returned[i],0)-1);
+            book.put(returned[i],book.get(returned[i]-1);
         }
         for(String key : book.keySet()){
             if(book.get(key) != 0){
