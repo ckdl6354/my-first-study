@@ -42,6 +42,19 @@ class Solution {
         return "";
     }
 }
+// HashSet을 이용한 문제풀이
+import java.util.HashSet;
+class Solution {
+    public int solution(int[] items) {
+        int maxPick = items.length / 2;  //정수형 maxPick에 items의 길이의 2를 나눈값을 넣는다.        
+        HashSet<Integer> set = new HashSet<>(); 
+        for (int i = 0; i < items.length; i++) {  
+            set.add(items[i]); //set에 items를 하나씩 집어넣는다.
+        }
+        return Math.min(set.size(),maxPick);  //둘중 비교해 작은 값을 바로 반환
+        }
+    }
+}
 
 //put : 넣기,덮어쓰기 ( 처음저장하거나 기존값을 새로운값으로 수정할때)
 //get : 꺼내보기 (특정 Key에 어떤 값이 들어있는지 조회할때,없으면 null)
