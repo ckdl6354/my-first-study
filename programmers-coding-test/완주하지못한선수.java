@@ -56,6 +56,19 @@ class Solution {
     }
 }
 
+import java.util.HashSet;
+class Solution {
+    public int solution(int[] genres) {
+        int answer = genres.length/3;
+        HashSet<Integer> set = new HashSet<>();
+        for(int i=0;i<genres.length;i++){
+            set.add(genres[i]);
+        }
+        return Math.min(set.size(),answer);
+    }
+}
+
+
 //put : 넣기,덮어쓰기 ( 처음저장하거나 기존값을 새로운값으로 수정할때)
 //get : 꺼내보기 (특정 Key에 어떤 값이 들어있는지 조회할때,없으면 null)
 //getOrDefault(Key,기본값) : 없으면 기본값주기 ( 개수(카운트),처음등장한 데이터도 에러없이 0부터세기위해씀)
